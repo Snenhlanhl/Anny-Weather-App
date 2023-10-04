@@ -4,8 +4,11 @@ body{
 .Weather-app {
     max-width: 600px;
     margin: 30px auto;
-    padding: 50px;
-    border: 8px solid #1a529b;
+    padding: 20px;
+    border: 1px solid #55746a;
+    border-radius: 5px;
+    border-radius: 5px;
+
 
 }
 h1{
@@ -28,6 +31,9 @@ li{
     font-size:100;
     line-height: 19px;
 }
+li:first-letter{
+    text-transform: capitalize;
+}
 .weather-app-wrapper {
     max-width: 600px;
     margin: 30px auto;
@@ -49,3 +55,5 @@ li{
     font-size: 16px;
     top: -34 px;
 }
+
+

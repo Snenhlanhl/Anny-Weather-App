@@ -14,8 +14,8 @@
 </head>
 <body>
     <div class="container">
-        <div class="Weather-App">
-            <div class="Weather-App-Wrapper">
+        <div class="Weather-app">
+            <div class="Weather-app-wrapper">
                 <div class="overview">
                     <h1>
                         Durban
@@ -31,29 +31,25 @@
                     <div class="row">
                         <div class="col-6">
                             <div class="d-flex weather-temperature">
-                            <img src="https://assets.msn.com/weathermapdata/1/static/weather/Icons/taskbar_v10/Condition_Card/SunnyDayV3.svg " target="block" alt="clear"/>
-                            <div class="d-flex"><strong>29</strong>
+                            <img src="https://assets.msn.com/weathermapdata/1/static/weather/Icons/taskbar_v10/Condition_Card/SunnyDayV3.svg " target="block" alt="clear" id="icon" class="d-flex"/>
+                            <div class="d-flex">
+                                <strong class id="temperature"></strong>
+                                    <span class="units">°C</span>
                           </div>
                          </div>
                         </div>
                         <div class ="col-6">
                             <ul>
-                                <li>
-                                    precipitation: 60%
-                                </li>
-                                <li>
-                                    Humidity: 74%
-                                </li>
-                                <li>
-                                    Wind: 6km/h
-                                </li>
+                                <li> Humidity: <span id="humidity"></span>%</li>
+                                <li>Wind: <span id="wind"></span>km/h</li>
                             </ul>
                         </div>
                     </div>
-                </div>
-         <small>
-        <a href="https://github.com/Snenhlanhl/Anny-Weather-App " target="blank"> Open-source code </a>, by Sinenhlanhla Nsele
-    </small>
-    <script src ="script.js "></script>
+                    <div class="weather-forecast" id="forecast"></div>
+                    </div>
+                <small>
+               <a href="https://github.com/Snenhlanhl/Anny-Weather-App " target="blank"> Open-source code </a>, by Sinenhlanhla Nsele
+           </small>
+         <script src ="script.js "></script>
 </body>
 </html>
