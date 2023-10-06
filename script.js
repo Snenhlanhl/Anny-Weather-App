@@ -28,4 +28,47 @@ function formatDate(timestamp) {
   
     return days[day];
   }
+  let dateElement = document.querySelector("#date");
+  let currentTime = new Date();
+  dateElement.innerHTML = formatDate(currentTime);
+
+
   
+
+  function displayTemperature (response) {
+    document.querySelector("#temperature").innerHTML= Math.round(response.data.main,temp);
+
+    document.querySelector("#city").innerHTML = response.data.name;
+
+    document.querySelector("#description").innerHTML =response.data.weather[0].main;
+
+    let humidity= document.querySelector("#humidity");
+    humidity.innerHTML = response.data.main.humidity;
+
+    let wind= document.querySelector("#wind");
+    wind.innerHTML = Math.round(response.data.wind.speed * 3.6);
+
+
+  }
+  
+  
+
+  
+
+
+function search(city) {
+  let apiKey = "cabdbda40038ba7d1165b953b1c7bd6c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
+search("Durban");
