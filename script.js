@@ -36,7 +36,7 @@ function formatDate(timestamp) {
   
 
   function displayTemperature (response) {
-    document.querySelector("#temperature").innerHTML= Math.round(response.data.main,temp);
+    document.querySelector("#temperature").innerHTML= Math.round(response.data.main.temp);
 
     document.querySelector("#city").innerHTML = response.data.name;
 
@@ -47,6 +47,16 @@ function formatDate(timestamp) {
 
     let wind= document.querySelector("#wind");
     wind.innerHTML = Math.round(response.data.wind.speed * 3.6);
+
+    let iconElement = document.querySelector("#icon");
+
+    iconElement.setAttribute(
+        "src",
+        `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+      );
+      iconElement.setAttribute("alt", response.data.weather[0].description);
+    
+      
 
 
   }
